@@ -2,13 +2,12 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "project",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "test": "test"
-  },
   "bin": {
     "brain-games": "bin/brain-games.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
   },
   "repository": {
     "type": "git",
@@ -19,6 +18,7 @@
   "bugs": {
     "url": "https://github.com/popalopa20/frontend-project-44/issues"
   },
+  "type": "module",
   "homepage": "https://github.com/popalopa20/frontend-project-44#readme",
   "dependencies": {
     "readline-sync": "^1.4.10"
