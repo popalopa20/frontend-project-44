@@ -9,4 +9,3 @@ const greeting = (description) => {
 };
 
 export default greeting;
-    
