@@ -18,3 +18,16 @@ export const operation = (arr) => {
   const operator = arr[index];
   return operator;
 };
+
+export const nod = (x, y) => {
+  let a = x;
+  let b = y;
+  while (a !== b) {
+    if (a > b) {
+      a = a - b;
+    } else {
+      b = b - a;
+    }
+  }
+  return a;
+};
