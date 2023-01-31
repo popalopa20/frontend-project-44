@@ -31,3 +31,24 @@ export const nod = (x, y) => {
   }
   return a;
 };
+
+export const itsProgressing = (n, a) => {
+  let result = '';
+  const length = numbers(5, 10);
+  const hidden = numbers(1, length - 1);
+  for (let d = 0; d < length; d += 1) {
+    const num = (n + (a * d));
+    result += (d !== hidden) ? `${num} ` : '.. ';
+  }
+  return result;
+};
+
+
+export const pass = (arr) => {
+  const sort = arr.split(' ');
+  const index = sort.indexOf('..');
+  const prev = parseInt(sort[index - 1], 10);
+  const next = parseInt(sort[index + 1], 10);
+  const solve = (prev + next) / 2;
+  return `${solve}`;
+};
