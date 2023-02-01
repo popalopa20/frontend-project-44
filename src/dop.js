@@ -19,6 +19,6 @@ export const checkUsersAnswer = (userAnswer, userName, i, correct) => {
     type(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correct}'. \nLet's try again, ${userName}!`);
     return false;
   }
-  if (i === 2) type(`Congratulations, ${userName}}!`);
+  if (i === 2) type(`Congratulations, ${userName}!`);
   return true;
 };
