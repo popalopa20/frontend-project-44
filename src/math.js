@@ -24,9 +24,9 @@ export const nod = (x, y) => {
   let b = y;
   while (a !== b) {
     if (a > b) {
-      a = a - b;
+      a -= b;
     } else {
-      b = b - a;
+      b -= a;
     }
   }
   return a;
@@ -42,7 +42,6 @@ export const itsProgressing = (n, a) => {
   }
   return result;
 };
-
 
 export const pass = (arr) => {
   const sort = arr.split(' ');

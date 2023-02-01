@@ -9,9 +9,8 @@ const primeGame = () => {
     const b = numbers();
     const c = b !== a;
     const example = `${a}`;
-    const userAnswer = questionForUser(example, 'string')
+    const userAnswer = questionForUser(example, 'string');
     const correctPrime = a % 2 === 0 && a % c === 0 ? 'no' : 'yes';
-
 
     if (!checkUsersAnswer(userAnswer, name, i, correctPrime)) break;
   }
