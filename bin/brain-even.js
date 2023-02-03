@@ -7,8 +7,8 @@ const evenGame = () => {
   for (let i = 0; i < 3; i += 1) {
     const magicNumbers = numbers();
     const userAnswer = questionForUser(magicNumbers, 'string');
-    const correctEven = magicNumbers % 2 === 0 ? 'yes' : 'no';
-    if (!checkUsersAnswer(userAnswer, name, i, correctEven)) break;
+    const correct = magicNumbers % 2 === 0 ? 'yes' : 'no';
+    if (!checkUsersAnswer(userAnswer, name, i, correct)) break;
   }
 };
 
