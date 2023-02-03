@@ -49,5 +49,6 @@ export const pass = (arr) => {
   const prev = parseInt(sort[index - 1], 10);
   const next = parseInt(sort[index + 1], 10);
   const solve = (prev + next) / 2;
+  if (index === [arr.length - 2])
   return `${solve}`;
 };

@@ -11,5 +11,6 @@ const evenGame = () => {
     if (!checkUsersAnswer(userAnswer, name, i, correctEven)) break;
   }
 };
+
 evenGame();
 export default evenGame;
