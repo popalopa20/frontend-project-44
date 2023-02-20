@@ -19,6 +19,7 @@ const calc = () => {
       case '-':
         correctAnswer = letsCalc(x, y, '-');
         break;
+        
       case '*':
         correctAnswer = letsCalc(x, y, '*');
         break;
