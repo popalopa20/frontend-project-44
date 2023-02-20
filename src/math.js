@@ -49,15 +49,14 @@ export const pass = (arr) => {
   const prev = parseInt(sort[index - 1], 10);
   const next = parseInt(sort[index + 1], 10);
   const solve = (prev + next) / 2;
-  if (index === [arr.length - 2])
-  return `${solve}`;
+  if (index === [arr.length - 2]) return `${solve}`;
 };
 
 export const isPrime = (num) => {
-for (let i = 2; i < num; i += 1) {
-  if (num % i === 0) {
-    return false;
+  for (let i = 2; i < num; i += 1) {
+    if (num % i === 0) {
+      return false;
+    }
+    return true;
   }
-  return true;
-}
 };
