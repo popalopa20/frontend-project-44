@@ -6,25 +6,11 @@ const calc = () => {
   const name = greeting('What is the result of the expression?');
   for (let i = 0; i < 3; i += 1) {
     const oper = operation(['+', '-', '*']);
-    const x = numbers(1, 10);
-    const y = numbers(1, 10);
+    const x = numbers(1, 20);
+    const y = numbers(1, 20);
     const primer = `${x} ${oper} ${y}`;
     const userAnswer = questionForUser(primer);
-    let correctAnswer = 0;
-    switch (oper) {
-      case '+':
-        correctAnswer = letsCalc(x, y, '+');
-        break;
-
-      case '-':
-        correctAnswer = letsCalc(x, y, '-');
-        break;
-        
-      case '*':
-        correctAnswer = letsCalc(x, y, '*');
-        break;
-      default:
-    }
+    const correctAnswer = letsCalc(x, y, oper);
     if (!checkUsersAnswer(userAnswer, name, i, correctAnswer)) break;
   }
 };
