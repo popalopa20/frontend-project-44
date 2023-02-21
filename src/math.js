@@ -33,24 +33,28 @@ export const nod = (x, y) => {
 };
 
 export const itsProgressing = (n, a) => {
+  const d = numbers(1, 30);
+  const hidden = numbers(1, n - 1);
   let result = '';
-  const length = numbers(5, 10);
-  const hidden = numbers(1, length - 2);
-  for (let d = 0; d < length; d += 1) {
-    const num = (n + (a * d));
-    result += (d !== hidden) ? `${num} ` : '.. ';
+  for (let i = 0; i < n; i += 1) {
+    result += (hidden === i) ? '.. ' : `${a + d * i} `;
   }
   return result;
 };
 
-export const pass = (arr) => {
-  const sort = arr.split(' ');
-  const index = sort.indexOf('..');
-  const prev = parseInt(sort[index - 1], 10);
-  const next = parseInt(sort[index + 1], 10);
-  const solve = (prev + next) / 2;
-  return `${solve}`;
-};
+export const pass = (str) => {
+  const prog = str.split(' ');
+  const indOfHidden = prog.indexOf('..');
+  let result = 0;
+  const firstTwo = [parseInt(prog[0], 10), parseInt(prog[1], 10)]
+  const lastTwo = [parseInt(prog[prog.length - 3], 10), parseInt(prog[prog.length - 2], 10)]
+  if (indOfHidden > 1) {
+    result = firstTwo[0] + ((firstTwo[1] - firstTwo[0]) * indOfHidden)
+  } else {
+    result = lastTwo[1] - ((lastTwo[1] - lastTwo[0]) * indOfHidden)
+  }
+  return `${result}`;
+}
 
 export const isPrime = (num) => {
   for (let i = 2; i < num; i += 1) {
