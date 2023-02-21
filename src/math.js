@@ -54,7 +54,7 @@ export const pass = (str) => {
     result = lastTwo[1] - ((lastTwo[1] - lastTwo[0]) * (prog.length - indOfHidden - 2));
   }
   return `${result}`;
-}
+};
 
 export const isPrime = (num) => {
   for (let i = 2; i < num; i += 1) {
