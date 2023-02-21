@@ -35,7 +35,7 @@ export const nod = (x, y) => {
 export const itsProgressing = (n, a) => {
   let result = '';
   const length = numbers(5, 10);
-  const hidden = numbers(1, length - 1);
+  const hidden = numbers(1, length - 2);
   for (let d = 0; d < length; d += 1) {
     const num = (n + (a * d));
     result += (d !== hidden) ? `${num} ` : '.. ';
@@ -49,7 +49,7 @@ export const pass = (arr) => {
   const prev = parseInt(sort[index - 1], 10);
   const next = parseInt(sort[index + 1], 10);
   const solve = (prev + next) / 2;
-  if (index === [arr.length - 2]) return `${solve}`;
+  return `${solve}`;
 };
 
 export const isPrime = (num) => {
