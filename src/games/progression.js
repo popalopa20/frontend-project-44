@@ -1,6 +1,6 @@
 import greeting from '../cli.js';
 import { numbers, itsProgressing, pass } from '../math.js';
-import { questionForUser, checkUsersAnswer } from '../dop.js';
+import { questionForUser, checkUsersAnswer } from '../index.js';
 
 const progressing = () => {
   const name = greeting('What number is missing in the progression?');

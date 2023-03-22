@@ -1,6 +1,6 @@
 import greeting from '../cli.js';
 import { numbers, letsCalc, operation } from '../math.js';
-import { questionForUser, checkUsersAnswer } from '../dop.js';
+import { questionForUser, checkUsersAnswer } from '../index.js';
 
 const calc = () => {
   const name = greeting('What is the result of the expression?');

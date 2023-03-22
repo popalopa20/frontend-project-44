@@ -1,6 +1,6 @@
 import greeting from '../cli.js';
 import { numbers, isPrime } from '../math.js';
-import { questionForUser, checkUsersAnswer } from '../dop.js';
+import { questionForUser, checkUsersAnswer } from '../index.js';
 
 const primeGame = () => {
   const name = greeting('Answer "yes" if given number is prime. Otherwise answer "no".');

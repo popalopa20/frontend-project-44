@@ -1,6 +1,6 @@
 import greeting from '../cli.js';
 import { numbers, nod } from '../math.js';
-import { questionForUser, checkUsersAnswer } from '../dop.js';
+import { questionForUser, checkUsersAnswer } from '../index.js';
 
 const gcdGame = () => {
   const name = greeting('Find the greatest common divisor of given numbers.');

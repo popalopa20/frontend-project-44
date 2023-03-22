@@ -1,6 +1,6 @@
 import greeting from '../cli.js';
 import { numbers } from '../math.js';
-import { questionForUser, checkUsersAnswer } from '../dop.js';
+import { questionForUser, checkUsersAnswer } from '../index.js';
 
 const evenGame = () => {
   const name = greeting('Answer "yes" if the number is even, otherwise answer "no".');
