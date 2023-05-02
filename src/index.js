@@ -40,5 +40,5 @@ export const runEngine = (rules, generateRound) => {
       return;
     }
   }
-  console.log(`Congratulations, ${userName}`);
+  console.log(`Congratulations, ${userName}!`);
 };

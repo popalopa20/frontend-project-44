@@ -7,7 +7,7 @@ export default () => {
     const magicNumbers = numbers();
     const userAnswer = magicNumbers;
     const correctEven = magicNumbers % 2 === 0 ? 'yes' : 'no';
-    return [userAnswer, correctEven]
+    return [userAnswer, correctEven];
   };
-runEngine(rules, generateRound)
+  runEngine(rules, generateRound);
 };
