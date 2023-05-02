@@ -8,6 +8,6 @@ export default () => {
     const userAnswer = magicNumbers;
     const correctEven = magicNumbers % 2 === 0 ? 'yes' : 'no';
     return [userAnswer, correctEven]
-  }
+  };
 runEngine(rules, generateRound)
 };
