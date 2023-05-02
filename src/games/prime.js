@@ -1,6 +1,13 @@
 import greeting from '../cli.js';
-import { numbers, isPrime } from '../math.js';
+import { numbers } from '../math.js';
 import { questionForUser, checkUsersAnswer } from '../index.js';
+
+export const isPrime = (num) => {
+  for (let i = 2; i < num; i += 1) {
+    if (num % i === 0) return false;
+  }
+  return true;
+};
 
 export default () => {
   const name = greeting('Answer "yes" if given number is prime. Otherwise answer "no".');
