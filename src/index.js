@@ -32,8 +32,7 @@ export const runEngine = (rules, generateRound) => {
   const roundsCount = 3;
   for (let i = 0; i < roundsCount; i += 1) {
     const [question, answer] = generateRound();
-    const yourAnswer = readlineSync.question(`Question: ${question} `);
-    console.log(`Your answer: ${yourAnswer}`);
+    const yourAnswer = readlineSync.question(`Question: ${question} \nYour answer: `);
     if (yourAnswer === answer) {
       console.log('Correct!');
     } else {

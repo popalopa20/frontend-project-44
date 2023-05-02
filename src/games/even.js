@@ -1,13 +1,13 @@
-import greeting from '../cli.js';
 import { numbers } from '../math.js';
-import { questionForUser, checkUsersAnswer } from '../index.js';
+import { runEngine } from '../index.js';
 
 export default () => {
-  const name = greeting('Answer "yes" if the number is even, otherwise answer "no".');
-  for (let i = 0; i < 3; i += 1) {
+  const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+  const generateRound = () => {
     const magicNumbers = numbers();
-    const userAnswer = questionForUser(magicNumbers, 'string');
+    const userAnswer = magicNumbers;
     const correctEven = magicNumbers % 2 === 0 ? 'yes' : 'no';
-    if (!checkUsersAnswer(userAnswer, name, i, correctEven)) break;
+    return [userAnswer, correctEven]
   }
+runEngine(rules, generateRound)
 };
