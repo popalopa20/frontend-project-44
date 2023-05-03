@@ -1,6 +1,5 @@
-import greeting from '../cli.js';
 import { numbers } from '../math.js';
-import { questionForUser, checkUsersAnswer } from '../index.js';
+import { runEngine } from '../index.js';
 
 export const pass = (str) => {
   const prog = str.split(' ');
@@ -27,13 +26,13 @@ export const isProgressing = (n, a) => {
 };
 
 export default () => {
-  const name = greeting('What number is missing in the progression?');
-  for (let i = 0; i < 3; i += 1) {
+  const rules = 'What number is missing in the progression?';
+  const generateRound = () => {
     const n = numbers(5, 10);
     const a = numbers(2, 25);
     const ex = isProgressing(n, a);
-    const userAnswer = questionForUser(ex, 'string');
     const correctProgressing = pass(ex);
-    if (!checkUsersAnswer(userAnswer, name, i, correctProgressing)) break;
-  }
+    return [ex, correctProgressing];
+  };
+  runEngine(rules, generateRound);
 };

@@ -1,6 +1,5 @@
-import greeting from '../cli.js';
 import { numbers } from '../math.js';
-import { questionForUser, checkUsersAnswer } from '../index.js';
+import { runEngine } from '../index.js';
 
 export const isPrime = (num) => {
   for (let i = 2; i < num; i += 1) {
@@ -10,12 +9,11 @@ export const isPrime = (num) => {
 };
 
 export default () => {
-  const name = greeting('Answer "yes" if given number is prime. Otherwise answer "no".');
-  for (let i = 0; i < 3; i += 1) {
+  const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  const generateRound = () => {
     const a = numbers(2, 100);
-    const userAnswer = questionForUser(a, 'string');
     const correctPrime = isPrime(a) ? 'yes' : 'no';
-
-    if (!checkUsersAnswer(userAnswer, name, i, correctPrime)) break;
-  }
+    return [a, correctPrime];
+  };
+  runEngine(rules, generateRound);
 };

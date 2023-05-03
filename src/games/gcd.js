@@ -1,6 +1,5 @@
-import greeting from '../cli.js';
 import { numbers } from '../math.js';
-import { questionForUser, checkUsersAnswer } from '../index.js';
+import { runEngine } from '../index.js';
 
 export const nod = (x, y) => {
   let a = x;
@@ -16,14 +15,13 @@ export const nod = (x, y) => {
 };
 
 export default () => {
-  const name = greeting('Find the greatest common divisor of given numbers.');
-  for (let i = 0; i < 3; i += 1) {
+  const rules = 'Find the greatest common divisor of given numbers.';
+  const generateRound = () => {
     const a = numbers();
     const b = numbers();
     const example = `${a} ${b}`;
-    const userAnswer = questionForUser(example);
-    const correct = nod(a, b);
-
-    if (!checkUsersAnswer(userAnswer, name, i, correct)) break;
-  }
+    const correctGcd = nod(a, b);
+    return [example, correctGcd.toString()];
+  };
+  runEngine(rules, generateRound);
 };

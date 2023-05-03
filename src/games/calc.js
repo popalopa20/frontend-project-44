@@ -1,6 +1,5 @@
-import greeting from '../cli.js';
 import { numbers } from '../math.js';
-import { questionForUser, checkUsersAnswer } from '../index.js';
+import { runEngine } from '../index.js';
 
 export const letsCalc = (x, y, sign) => {
   let result = 0;
@@ -17,14 +16,14 @@ export const operation = (arr) => {
 };
 
 export default () => {
-  const name = greeting('What is the result of the expression?');
-  for (let i = 0; i < 3; i += 1) {
+  const rules = 'What is the result of the expression?';
+  const generateRound = () => {
     const oper = operation(['+', '-', '*']);
     const x = numbers(1, 20);
     const y = numbers(1, 20);
     const primer = `${x} ${oper} ${y}`;
-    const userAnswer = questionForUser(primer);
-    const correctAnswer = letsCalc(x, y, oper);
-    if (!checkUsersAnswer(userAnswer, name, i, correctAnswer)) break;
-  }
+    const correctCalc = letsCalc(x, y, oper);
+    return [primer, correctCalc.toString()];
+  };
+  runEngine(rules, generateRound);
 };
